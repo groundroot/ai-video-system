@@ -1,0 +1,72 @@
+# Environment Variables (API Keys)
+.env
+.env.*
+
+# Python Build and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+scripts/dist/
+scripts/build/
+*.spec
+
+# OS Specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Obsidian specific
+.obsidian/
+
+# ----------------------------------------------------
+# Project specific data (Exclude all user contents, keep structure)
+# ----------------------------------------------------
+
+# Exclude generated assets but keep the assets folder structure
+assets/*
+!assets/.gitkeep
+!assets/characters/
+!assets/worlds/
+!assets/audio/
+!assets/exports/
+!assets/archive/
+assets/characters/*
+!assets/characters/.gitkeep
+assets/worlds/*
+!assets/worlds/.gitkeep
+assets/audio/*
+!assets/audio/.gitkeep
+assets/exports/*
+!assets/exports/.gitkeep
+!assets/exports/images/
+!assets/exports/takes/
+assets/exports/images/*
+!assets/exports/images/.gitkeep
+assets/exports/takes/*
+!assets/exports/takes/.gitkeep
+assets/archive/*
+!assets/archive/.gitkeep
+
+# Exclude user's prompt files and projects but keep directory structure
+01_plan/projects/*
+!01_plan/projects/.gitkeep
+
+02_preproduction/storyboards/*
+!02_preproduction/storyboards/.gitkeep
+02_preproduction/image_prompts/*
+!02_preproduction/image_prompts/.gitkeep
+
+03_production/action_prompts/*
+!03_production/action_prompts/.gitkeep
+03_production/takes/*
+!03_production/takes/.gitkeep
+
+04_postproduction/edit_guides/*
+!04_postproduction/edit_guides/.gitkeep
+
+05_release/analytics/*
+!05_release/analytics/.gitkeep
