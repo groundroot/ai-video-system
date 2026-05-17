@@ -76,28 +76,15 @@ cp 01_plan/templates/plan_template.md 01_plan/projects/[프로젝트명]/plan.md
 
 ---
 
-## Step 4 — Postproduction (후반 작업)
-
-**담당:** Postproduction Agent (`agents/postproduction_agent.md`)  
-**폴더:** `04_postproduction/`
-
-### 4-1. 어셈블리(Assembly) 가이드
-- 영상 포맷(영화/쇼츠 등)의 리듬에 맞춰 컷 길이를 재조정하는 편집 가이드 작성.
-- 음악(Suno) 및 성우/나레이션(ElevenLabs) 에셋 생성.
-
-### 4-2. NLE(비선형 편집) 실행
-- CapCut 또는 프리미어 등을 이용하여 최종 영상 합본을 만듭니다.
-
-**완료 신호:** 완성본 v1.0 감독 승인 완료
-
----
-
-## Step 5 — Release (릴리즈)
+## Step 4 — Release (릴리즈)
 
 **담당:** Release Agent (`agents/release_agent.md`)  
-**폴더:** `05_release/`
+**폴더:** `04_release/`
 
-### 5-1. 업로드 및 데이터 분석
+> 편집(컷 어셈블리, 음악, 자막, 색보정)은 CapCut, Premiere Pro 등 **별도 NLE 툴**에서 진행한다.  
+> AI 파이프라인은 FINAL take 확보로 종료된다.
+
+### 4-1. 업로드 및 데이터 분석
 - YouTube / Instagram 등 채널 특성에 맞춘 제목 및 설명 생성.
 - 영상 업로드 및 성과 데이터 수집.
 

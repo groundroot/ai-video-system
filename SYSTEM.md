@@ -27,7 +27,6 @@
 | Plan Agent | 포맷(영화/광고 등)에 따른 기획 세팅, 캐스팅/로케이션 설계 | `agents/plan_agent.md` |
 | Preproduction Agent | 시놉시스/대본 분석 ➜ **이미지 제작 프롬프트 플랜** 생성 | `agents/preproduction_agent.md` |
 | Production Agent | 생성된 이미지 기반 ➜ **이미지-to-비디오** 생성 (액션 프롬프트) | `agents/production_agent.md` |
-| Postproduction Agent | 편집 가이드, 사운드/자막 | `agents/postproduction_agent.md` |
 | Release Agent | 업로드 전략, 데이터 분석 | `agents/release_agent.md` |
 
 ---
@@ -55,12 +54,7 @@
   AI (Veo/Wan/Hunyuan 등) ➜ 영상 생성
        │
        ▼
-[04_postproduction] ──── Postproduction Agent
-  편집 가이드에 따른 어셈블리 및 후반 작업
-  음성(ElevenLabs), 음악(Suno), 자막 설계
-       │
-       ▼
-[05_release] ──── Release Agent
+[04_release] ──── Release Agent
 ```
 
 ---
@@ -80,8 +74,7 @@ AI Video System/
 ├── 01_plan/                  ← 기획 단계 (원고 분석 및 포맷 결정)
 ├── 02_preproduction/         ← 프리프로덕션 (이미지 제작 프롬프트 플랜)
 ├── 03_production/            ← 프로덕션 (이미지-to-비디오 생성)
-├── 04_postproduction/        ← 포스트프로덕션
-├── 05_release/               ← 릴리즈
+├── 04_release/               ← 릴리즈 (편집은 별도 NLE 툴에서 진행)
 ├── scripts/                  ← 파이썬 CLI 자동화 시스템 (ai_video_cli.py)
 └── assets/                   ← 미디어 에셋 (images, takes, archive 등)
 ```
@@ -96,5 +89,5 @@ AI Video System/
 | 이미지 생성 (Pre-pro) | Gemini Imagen 3, Qwen Image (Midjourney 문법 사용) |
 | 이미지-to-비디오 (Pro) | Gemini Veo, Wan, Hunyuan |
 | 노드 기반 미세조정 | ComfyUI |
-| 영상 편집 | CapCut |
-| 음성/음악 | ElevenLabs / Suno |
+| 영상 편집 (NLE) | CapCut, Premiere Pro (파이프라인 외부) |
+| 음성/음악 | ElevenLabs / Suno (파이프라인 외부) |

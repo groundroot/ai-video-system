@@ -14,10 +14,10 @@ This file provides guidance to Claude Code (claude.ai/code) and Gemini Agents wh
 
 ---
 
-## 5단계 파이프라인
+## 4단계 파이프라인
 
 ```
-01_plan (원고 및 포맷 설정) → 02_preproduction (이미지 프롬프트 플랜) → 03_production (이미지-to-비디오) → 04_postproduction → 05_release
+01_plan (원고 및 포맷 설정) → 02_preproduction (이미지 프롬프트 플랜) → 03_production (이미지-to-비디오) → 04_release
 ```
 
 | 단계 | 역할 | 에이전트 프롬프트 | 핵심 출력물 |
@@ -25,7 +25,6 @@ This file provides guidance to Claude Code (claude.ai/code) and Gemini Agents wh
 | Plan | 포맷 설정, 대본 분석, 바이블(캐스팅/로케이션) 구축 | `plan_agent.md` | `plan.md`, 바이블 세팅 |
 | Preproduction | 시놉시스 기반 이미지 프롬프트 플랜 생성 | `preproduction_agent.md` | 베이스 이미지 (FINAL) |
 | Production | 이미지를 비디오 엔진으로 전송 (액션 프롬프팅) | `production_agent.md` | take 영상 (FINAL) |
-| Postproduction| 편집 가이드에 따른 컷 편집, 음향 입히기 | `postproduction_agent.md` | 완성본 |
 | Release | 플랫폼 업로드 전략 및 데이터 리포트 | `release_agent.md` | 분석 데이터 |
 
 **Director Agent** (`agents/director_agent.md`)는 파이프라인 총괄 및 바이블 일관성 감시.

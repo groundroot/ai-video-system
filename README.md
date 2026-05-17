@@ -10,8 +10,10 @@
 ## 파이프라인 개요
 
 ```
-01_plan → 02_preproduction → 03_production → 04_postproduction → 05_release
- 기획       이미지 프롬프트      이미지→영상        편집·음향           배포·분석
+01_plan → 02_preproduction → 03_production → 04_release
+ 기획       이미지 프롬프트      이미지→영상      배포·분석
+                                    ↓
+                              (NLE 편집 툴로 핸드오프)
 ```
 
 | 단계 | 역할 | 담당 에이전트 | 핵심 출력물 |
@@ -19,8 +21,10 @@
 | **01 Plan** | 포맷 결정, 대본 분석, 바이블 설계 | `plan_agent.md` | `plan.md`, 캐스팅/로케이션 바이블 |
 | **02 Preproduction** | 바이블 ID 조합 → Midjourney 프롬프트 생성 → 베이스 이미지 | `preproduction_agent.md` | 씬별 FINAL 이미지 |
 | **03 Production** | 이미지-to-Video 엔진 투입 → Take 생성 | `production_agent.md` | 씬별 FINAL mp4 |
-| **04 Postproduction** | 컷 편집 가이드, 음악·음성 에셋 | `postproduction_agent.md` | 완성본 v1.0 |
-| **05 Release** | 채널 업로드, 성과 데이터 분석 | `release_agent.md` | 분석 리포트 |
+| **04 Release** | 채널 업로드, 성과 데이터 분석 | `release_agent.md` | 분석 리포트 |
+
+> **편집(컷 어셈블리, 음악, 자막, 색보정)은 CapCut / Premiere Pro 등 별도 NLE 툴에서 진행한다.**  
+> AI 파이프라인은 FINAL take(mp4) 확보로 종료되며, 이후는 사람이 직접 편집한다.
 
 ---
 
@@ -56,7 +60,6 @@ AI Video System/
 │   ├── plan_agent.md
 │   ├── preproduction_agent.md
 │   ├── production_agent.md
-│   ├── postproduction_agent.md
 │   └── release_agent.md
 ├── bibles/                        ← 일관성 통제 바이블 (핵심)
 │   ├── casting_bible.md
@@ -72,9 +75,7 @@ AI Video System/
 ├── 03_production/
 │   ├── action_prompts/            ← 이미지-to-Video 액션 프롬프트
 │   └── takes/                     ← 생성된 영상 Take
-├── 04_postproduction/
-│   └── edit_guides/
-├── 05_release/
+├── 04_release/
 │   ├── templates/
 │   └── analytics/
 ├── scripts/
@@ -201,14 +202,14 @@ bash scripts/build_executable.sh
 
 ## 지원 AI 엔진
 
-| 역할 | 엔진 |
-|------|------|
-| 이미지 생성 | Gemini Imagen 3, Qwen Image |
-| 이미지→영상 | Gemini Veo, Wan, Hunyuan |
-| 노드 기반 미세조정 | ComfyUI |
-| 음성·나레이션 | ElevenLabs |
-| 배경음악 | Suno |
-| 영상 편집 | CapCut, Premiere Pro |
+| 역할 | 엔진 | 파이프라인 포함 |
+|------|------|:---:|
+| 이미지 생성 | Gemini Imagen 3, Qwen Image | O |
+| 이미지→영상 | Gemini Veo, Wan, Hunyuan | O |
+| 노드 기반 미세조정 | ComfyUI | O |
+| 영상 편집 (NLE) | CapCut, Premiere Pro | 외부 |
+| 음성·나레이션 | ElevenLabs | 외부 |
+| 배경음악 | Suno | 외부 |
 
 ---
 
